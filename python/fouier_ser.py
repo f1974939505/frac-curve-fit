@@ -14,7 +14,7 @@ def get_coff(x, y, N):
     h = T / (len(x) - 1)
     An = np.zeros(N+1)
     An[0] = np.sum((y[0:-1] + y[1:])) / T / 2 * h
-    for i in range(N):
+    for i in range(1, N):
         y2 = np.cos(i * np.pi * x / T)
         An[i] = np.sum((y[0:-1] * y2[0:-1] + y[1:] * y2[1:]) / 2 * h) / T * 2
     return An
